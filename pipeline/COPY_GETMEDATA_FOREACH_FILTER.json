@@ -125,8 +125,11 @@
 									"referenceName": "ds_adls_csv",
 									"type": "DatasetReference",
 									"parameters": {
-										"container": " 05-activities ",
-										"path": "@toLower('')",
+										"container": "05-activities",
+										"path": {
+											"value": "@toLower('')",
+											"type": "Expression"
+										},
 										"file": {
 											"value": "@item().name",
 											"type": "Expression"
@@ -139,10 +142,10 @@
 									"referenceName": "ds_generic_adls",
 									"type": "DatasetReference",
 									"parameters": {
-										"container": "05-activities ",
+										"container": "05-activities",
 										"path": "pasta01",
 										"file": {
-											"value": "@replace(item().name,'.txtx' ,'.parquet' ) ",
+											"value": "@replace(item().name, '.csv','.parquet')",
 											"type": "Expression"
 										}
 									}
