@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "Controller",
+				"description": "está na propriedade ArrayMode",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -34,7 +35,8 @@
 							"path": "@toLower('')",
 							"file": "controller_tables.csv"
 						}
-					}
+					},
+					"firstRowOnly": false
 				}
 			}
 		],
