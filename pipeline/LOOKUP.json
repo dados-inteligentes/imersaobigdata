@@ -1,0 +1,46 @@
+{
+	"name": "LOOKUP",
+	"properties": {
+		"activities": [
+			{
+				"name": "Controller",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"dataset": {
+						"referenceName": "ds_adls_csv",
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "05-activities",
+							"path": "@toLower('')",
+							"file": "controller_tables.csv"
+						}
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "00-ACTIVITIES"
+		},
+		"annotations": []
+	}
+}
