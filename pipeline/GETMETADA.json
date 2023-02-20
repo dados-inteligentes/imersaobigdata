@@ -37,7 +37,9 @@
 							"file": "tabela.csv"
 						}
 					},
-					"fieldList": [],
+					"fieldList": [
+						"itemName"
+					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
 						"enablePartitionDiscovery": false
@@ -76,7 +78,9 @@
 							"file": "@toLower('')"
 						}
 					},
-					"fieldList": [],
+					"fieldList": [
+						"childItems"
+					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
 						"enablePartitionDiscovery": false
@@ -114,7 +118,9 @@
 							"table": "table_adf_turma_"
 						}
 					},
-					"fieldList": []
+					"fieldList": [
+						"structure"
+					]
 				}
 			}
 		],
