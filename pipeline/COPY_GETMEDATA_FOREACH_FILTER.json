@@ -145,7 +145,7 @@
 										"container": "05-activities",
 										"path": "pasta01",
 										"file": {
-											"value": "@replace(item().name, '.csv','.parquet')",
+											"value": "@replace(item().name, '.txt','.parquet')",
 											"type": "Expression"
 										}
 									}
