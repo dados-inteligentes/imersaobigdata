@@ -4,7 +4,7 @@
 		"activities": [
 			{
 				"name": "Controller",
-				"description": "está na propriedade ArrayMode",
+				"description": "está na propriedade ArrayMode. Eu tive que mudar no dataset para ler a primeira linha como cabeçalho",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
