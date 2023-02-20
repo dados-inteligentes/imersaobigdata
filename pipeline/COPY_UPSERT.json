@@ -1,0 +1,81 @@
+{
+	"name": "COPY_UPSERT",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy UperSet",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"additionalColumns": [
+							{
+								"name": "data_insert",
+								"value": {
+									"value": "@utcNow()",
+									"type": "Expression"
+								}
+							}
+						],
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "upsert",
+						"upsertSettings": {
+							"useTempDB": true,
+							"keys": [
+								"id"
+							]
+						},
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_azure_sql",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema": "Teste",
+							"table": "Tabela_Teste"
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_azure_sql",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema": "Teste",
+							"table": "Tabela_Upset"
+						}
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "00-ACTIVITIES"
+		},
+		"annotations": []
+	}
+}
