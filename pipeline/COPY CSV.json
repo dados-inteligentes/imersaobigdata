@@ -54,7 +54,15 @@
 				"outputs": [
 					{
 						"referenceName": "ds_adls_csv",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"container": "05-activities",
+							"path": {
+								"value": "@toLower('')",
+								"type": "Expression"
+							},
+							"file": "tabela.csv"
+						}
 					}
 				]
 			}
