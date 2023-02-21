@@ -1,0 +1,9 @@
+{
+	"name": "TRG_SCHEDULE",
+	"properties": {
+		"folder": {
+			"name": "00- TRIGGER"
+		},
+		"annotations": []
+	}
+}
