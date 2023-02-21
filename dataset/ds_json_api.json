@@ -1,0 +1,30 @@
+{
+	"name": "ds_json_api",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_http_api",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"token": {
+				"type": "string",
+				"defaultValue": "aOwxflbR0JCOLfmHNHmkxJqnsudINGlG"
+			},
+			"relative_url": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "@concat(dataset().relative_url,'&api-key=',dataset().token)",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	}
+}
