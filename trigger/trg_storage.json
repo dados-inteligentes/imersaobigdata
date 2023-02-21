@@ -1,0 +1,26 @@
+{
+	"name": "trg_storage",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "TGR_STORAGE_EVENTS",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/05-activities/blobs/",
+			"blobPathEndsWith": ".csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/17f9a048-8a30-44ca-a3a3-3bf633b5f72b/resourceGroups/rg-imersaobigdata/providers/Microsoft.Storage/storageAccounts/adlsimersaobigdata",
+			"events": [
+				"Microsoft.Storage.BlobCreated",
+				"Microsoft.Storage.BlobDeleted"
+			]
+		}
+	}
+}

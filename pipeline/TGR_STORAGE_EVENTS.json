@@ -1,0 +1,9 @@
+{
+	"name": "TGR_STORAGE_EVENTS",
+	"properties": {
+		"folder": {
+			"name": "00- TRIGGER"
+		},
+		"annotations": []
+	}
+}
