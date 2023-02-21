@@ -1,0 +1,60 @@
+{
+	"name": "SCRIPT COM FILTER",
+	"properties": {
+		"activities": [
+			{
+				"name": "SELECT",
+				"type": "Script",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "ls_sql_db",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query",
+							"text": "SELECT  [ProductID]\n      ,[Name]\n    \n      ,[Color]\n   \n  FROM [SalesLT].[Product]\n "
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00"
+				}
+			},
+			{
+				"name": "Filter1",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "SELECT",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('SELECT').output.resultSets[0]['rows']",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@equals(item().color,'Black')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"folder": {
+			"name": "00-ACTIVITIES"
+		},
+		"annotations": []
+	}
+}
