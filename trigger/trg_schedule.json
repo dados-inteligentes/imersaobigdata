@@ -1,0 +1,24 @@
+{
+	"name": "trg_schedule",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "TRG_SCHEDULE",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2023-02-21T14:35:00",
+				"timeZone": "E. South America Standard Time"
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "adf-imersaobigdata",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ffe63d79-e65b-4059-a86a-aada30f2de74",
+		"tenantId": "6949d571-71b2-428b-8f41-1fa686f049e9"
+	}
+}
