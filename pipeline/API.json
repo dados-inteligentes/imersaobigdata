@@ -42,7 +42,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"token": "aOwxflbR0JCOLfmHNHmkxJqnsudINGlG",
-							"relative_url": "/critics/all.json?"
+							"relative_url": "critics/all.json?"
 						}
 					}
 				],
