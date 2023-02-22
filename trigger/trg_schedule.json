@@ -14,10 +14,9 @@
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
-				"frequency": "Minute",
+				"frequency": "Hour",
 				"interval": 1,
-				"startTime": "2023-02-21T15:12:00",
-				"endTime": "2023-02-21T15:20:00",
+				"startTime": "2023-02-22T11:20:00",
 				"timeZone": "E. South America Standard Time"
 			}
 		}
