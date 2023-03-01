@@ -1,0 +1,144 @@
+{
+	"name": "01-ORQUESTRATION-RAW",
+	"properties": {
+		"activities": [
+			{
+				"name": "ARTISTA",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ARTISTA",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "ESTILO MUSICAL",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "ARTISTA",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ESTILO MUSICAL",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "EVENTO ARTISTA",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "EVENTO",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "EVENTO_ARTISTA",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "EVENTO",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "ESTILO MUSICAL",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "EVENTO",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "LOCALIZACAO",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "EVENTO ARTISTA",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "LOCALIZACAO",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "ORGANIZADOR",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "LOCALIZACAO",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ORGANIZADOR",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "TELEFONE",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "ORGANIZADOR",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "TELEFONE",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"folder": {
+			"name": "02-ORQUESTRADOR"
+		},
+		"annotations": []
+	}
+}
