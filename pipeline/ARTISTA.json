@@ -54,7 +54,7 @@
 						"referenceName": "ds_generic_adls",
 						"type": "DatasetReference",
 						"parameters": {
-							"container": " 01-raw",
+							"container": "01-raw",
 							"path": {
 								"value": "@toLower('')",
 								"type": "Expression"
