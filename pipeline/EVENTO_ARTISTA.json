@@ -44,7 +44,7 @@
 						"referenceName": "ds_azure_sql",
 						"type": "DatasetReference",
 						"parameters": {
-							"schema": "evento",
+							"schema": "eventos",
 							"table": "evento_artista"
 						}
 					}
