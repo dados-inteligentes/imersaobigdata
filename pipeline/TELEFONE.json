@@ -55,7 +55,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"container": "01-raw",
-							"path": "toLower('')",
+							"path": "@toLower('')",
 							"file": "telefone.parquet"
 						}
 					}
