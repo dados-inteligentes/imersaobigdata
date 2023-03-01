@@ -12,7 +12,7 @@
 					"referenceName": "ls_key_vault",
 					"type": "LinkedServiceReference"
 				},
-				"secretName": "secret-bricks-adf"
+				"secretName": "secret-databricks-adf"
 			}
 		}
 	}
